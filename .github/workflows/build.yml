@@ -98,7 +98,7 @@ jobs:
 
   release:
     name: Release to Github
-    if: startsWith(github.ref, 'refs/tags/') && github.repository == 'axetroy/dvm'
+    if: startsWith(github.ref, 'refs/tags/') && github.repository == 'axetroy/daemon'
     needs: [lint, format, build]
     runs-on: ubuntu-latest
     steps:
@@ -111,11 +111,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           files: |
-            bin/dvm_darwin_amd64.tar.gz
-            bin/dvm_linux_amd64.tar.gz
-            bin/dvm_linux_arm64.tar.gz
-            bin/dvm_freebsd_amd64.tar.gz
-            bin/dvm_openbsd_amd64.tar.gz
-            bin/dvm_openbsd_arm64.tar.gz
-            bin/dvm_windows_amd64.tar.gz
+            bin/daemon_darwin_amd64.tar.gz
+            bin/daemon_linux_amd64.tar.gz
+            bin/daemon_linux_arm64.tar.gz
+            bin/daemon_freebsd_amd64.tar.gz
+            bin/daemon_openbsd_amd64.tar.gz
+            bin/daemon_openbsd_arm64.tar.gz
+            bin/daemon_windows_amd64.tar.gz
           draft: false
